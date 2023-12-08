@@ -14,8 +14,11 @@
                 <th>Email Address</th>
                 <th>Created Time</th>
             </tr>
+            {% for display in crudst}
             <tr>
-
+                <td>{{display.contact_name}}</td>
+                <td>{{display.contact_email}}</td>
+                <td>{{display.contact_time}}</td>
             </tr>
         </table>
     </center>

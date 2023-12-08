@@ -9,6 +9,8 @@
         <h2>Add New Contact</h2>
         <hr/>
     </center>
+    <form method = "POST">
+        {% csrf_token %}
     <table>
         <tr>
             <td>Contact Name</td>
@@ -27,6 +29,16 @@
     </table>
 
     <input type = "submit" value = "Sumbit Record" >
+    <hr/>
+    {% if messages %}
+    {% for result in messages %}
+    <b style = "color: darkgreen;"> {{result}} </b>
+    {% endfor %}
+    {% endif %}
+
+
+    </form>
+
 </body>
 
 </html>
