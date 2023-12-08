@@ -2,9 +2,9 @@ from django.shortcuts import render
 from contacts.models import crudst
 from django.contrib import messages
 
-def display(request):
+def contact_display(request):
     results = crudst.objects.all()
-    return render(request, 'index.html', {'crudst: results'})
+    return render(request, 'index.html', {'crudst': results})
 
 def contact_insert(request):
     if request.method == "POST":
