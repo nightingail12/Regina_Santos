@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Index</title>
+    <title>Home Page</title>
 </head>
 
 <body>
@@ -9,20 +9,28 @@
     <center>
         <h1>Contact Management</h1>
         <hr/>
-        <table>
+        <table border="1">
             <tr>
                 <th>Contact Name</th>
                 <th>Email Address</th>
-                <th>Created Time</th>
+                <th>Time Created</th>
             </tr>
-            {% for contact_display in crudst%}
+            {% for contact in crudst %}
             <tr>
-                <td>{{display.contact_name}}</td>
-                <td>{{display.contact_email}}</td>
-                <td>{{display.contact_time}}</td>
+                <td>{{ contact.contact_name }}</td>
+                <td>{{ contact.contact_email }}</td>
+                <td>{{ contact.contact_time }}</td>
+            </tr>  
+            {% endfor %}
             </tr>
         </table>
     </center>
 </body>
+
+<footer>
+    <center>
+        <h5><i>---Created by Regina Santos---</i></h5>
+    </center>
+</footer>
 
 </html>

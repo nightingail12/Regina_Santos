@@ -9,7 +9,7 @@
         <h2>Add New Contact</h2>
         <hr/>
     </center>
-    <form method = "POST">
+    <form method = "post">
         {% csrf_token %}
     <table>
         <tr>
@@ -29,7 +29,7 @@
     </table>
 
     <input type = "submit" value = "Sumbit Record" >
-    <a href = "{% url 'display'%}">Cancel</a>
+    <a href = "{% url 'contact_display'%}">Home</a>
     <hr/>
     {% if messages %}
     {% for result in messages %}
@@ -41,5 +41,11 @@
     </form>
 
 </body>
+
+<footer>
+    <center>
+        <h5><i>---Created by Regina Santos---</i></h5>
+    </center>
+</footer>
 
 </html>
