@@ -1,37 +1,45 @@
+{% load static %}
+
 <!DOCTYPE html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index_style.css' %}">
     <title>Home Page</title>
 </head>
 
 <body>
-    <a href = "{% url 'contact_insert'%}">Add New Contact</a>
-    <center>
-        <h1>Contact Management</h1>
-        <hr/>
-        <table border="1">
-            <tr>
-                <th>Contact Name</th>
-                <th>Email Address</th>
-                <th>Time Created</th>
-            </tr>
-            {% for contact in crudst %}
-            <tr>
-                <td>{{ contact.contact_name }}</td>
-                <td>{{ contact.contact_email }}</td>
-                <td>{{ contact.contact_time }}</td>
-                <td><a href="/Edit/{{contact.contact_name}}">Edit</a></td>
-                <td><a href="/Delete/{{contact.contact_name}}" onclick="return confirm('Would you like to delete contact information?')">Delete</a></td>
-            </tr>  
-            {% endfor %}
-            </tr>
-        </table>
-    </center>
+    <div class="page-header">
+        <div class="header">
+            <h1>Contact Management</h1>
+            <b><a href="{% url 'contact_insert'%}" class="add-contact-link">Add New Contact</a></b>
+        </div>
+    </div>
+    <hr/>
+    <table border="1">
+        <tr>
+            <th>Contact Name</th>
+            <th>Email Address</th>
+            <th>Time Created</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for contact in crudst %}
+        <tr>
+            <td>{{ contact.contact_name }}</td>
+            <td>{{ contact.contact_email }}</td>
+            <td>{{ contact.contact_time }}</td>
+            <td><a href="/Edit/{{contact.contact_name}}"><u>Edit</u></a></td>
+            <td><a href="/Delete/{{contact.contact_name}}" onclick="return confirm('Would you like to delete contact information?')"><u>Delete</u></a></td>
+        </tr>  
+        {% endfor %}
+    </table>
 </body>
-
 <footer>
     <center>
-        <h5><i>---Created by Regina Santos---</i></h5>
+        <h3><i>---Created by Regina Santos---</i></h3>
     </center>
 </footer>
 

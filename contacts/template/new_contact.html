@@ -1,12 +1,18 @@
+{% load static %}
+
 <!DOCTYPE html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/new_contact.css' %}">
     <title>Create New Contact</title>
 </head>
 
 <body>
     <center>
-        <h2>Add New Contact</h2>
+        <h1><b></b>Add New Contact</b></h1>
         <hr/>
     </center>
     <form method = "post">
@@ -28,12 +34,24 @@
         </tr>
     </table>
 
-    <input type = "submit" value = "Sumbit Record" >
-    <a href = "{% url 'contact_display'%}">Home</a>
-    <hr/>
+    <center>
+        <p>
+        
+        </p>
+        <input type = "submit" value = "Sumbit Record" >
+    </center>
+    <center>
+        <p></p>
+        <a href = "{% url 'contact_display'%}"><u>Home</u></a>
+        <p>
+            
+        </p>
+    </center>
     {% if messages %}
     {% for result in messages %}
+    <center>
     <b style = "color: darkgreen;"> {{result}} </b>
+    </center>
     {% endfor %}
     {% endif %}
 
@@ -44,7 +62,7 @@
 
 <footer>
     <center>
-        <h5><i>---Created by Regina Santos---</i></h5>
+        <h3><i>---Created by Regina Santos---</i></h3>
     </center>
 </footer>
 

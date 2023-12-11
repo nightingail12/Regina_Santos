@@ -1,11 +1,19 @@
+{% load static %}
+
 <!DOCTYPE html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}">
     <title>Edit Page</title>
 </head>
 
 <body>
+    <center>
     <h1>Edit and Update Contact Details</h1>
+    </center>
     <hr/>
     <form method="post" action="{% url 'contact_update' contact_name=crudst.contact_name %}">
         {% csrf_token %}
@@ -23,16 +31,27 @@
                 <td><input type= "text" name="contact_notes" value= "{{crudst.contact_notes}}"></td>
             </tr>
         </table>
-        <input type="submit" value="Update Record"> |
-        <a href = "{% url 'contact_display'%}">Home</a>
-        <hr/>
+        <center>
+        <p></p>
+        <input type="submit" value="Update Record">
+        <p> </p>
+        <a href = "{% url 'contact_display'%}"><u>Home</u></a>
+        </center>    
+        <p></p>
         {% if messages %}
             <ul>
                 {% for message in messages %}
-                    <h3>{{ message }}</h3>
+                <center>
+                    <h3 style = "color: darkgreen;">{{ message }}</h3>
+                </center>
                 {% endfor %}
             </ul>
         {% endif %}
     </form>
 </body>
+<footer>
+    <center>
+        <h3><i>---Created by Regina Santos---</i></h3>
+    </center>
+</footer>
 </html>
