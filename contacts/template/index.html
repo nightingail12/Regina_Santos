@@ -20,6 +20,8 @@
                 <td>{{ contact.contact_name }}</td>
                 <td>{{ contact.contact_email }}</td>
                 <td>{{ contact.contact_time }}</td>
+                <td><a href="/Edit/{{contact.contact_name}}">Edit</a></td>
+                <td><a href="/Delete/{{contact.contact_name}}" onclick="return confirm('Would you like to delete contact information?')">Delete</a></td>
             </tr>  
             {% endfor %}
             </tr>

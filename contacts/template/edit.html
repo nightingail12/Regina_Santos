@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Edit Page</title>
+</head>
+
+<body>
+    <h1>Edit and Update Contact Details</h1>
+    <hr/>
+    <form method="post" action="{% url 'contact_update' contact_name=crudst.contact_name %}">
+        {% csrf_token %}
+        <table border="1">
+            <tr>
+                <td>Contact Name</td>
+                <td><input type= "text" name="contact_name" value= "{{crudst.contact_name}}"></td>
+            </tr>
+            <tr>
+                <td>Email Address</td>
+                <td><input type= "text" name="contact_email" value= "{{crudst.contact_email}}"></td>
+            </tr>
+            <tr>
+                <td>Notes</td>
+                <td><input type= "text" name="contact_notes" value= "{{crudst.contact_notes}}"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Update Record"> |
+        <a href = "{% url 'contact_display'%}">Home</a>
+        <hr/>
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <h3>{{ message }}</h3>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </form>
+</body>
+</html>

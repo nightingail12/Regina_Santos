@@ -21,5 +21,8 @@ from . import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', views.contact_display, name = 'contact_display'),
-    path('new_contact', views.contact_insert, name = 'contact_insert')
+    path('new_contact', views.contact_insert, name = 'contact_insert'),
+    path('Edit/<str:contact_name>', views.contact_edit, name="contact_edit"),
+    path('Update/<str:contact_name>', views.contact_update, name="contact_update"),
+    path('Delete/<str:contact_name>', views.contact_delete, name="contact_delete")
 ]
